@@ -134,4 +134,30 @@ const getMySchedules = async (req, res) => {
     }
 }
 
-module.exports = { generate, saveDraft, getMySchedules }
+// DELETE draft jadwal
+const deleteDraft = async (req, res) => {
+    const { id } = req.params
+
+    try {
+        const check = await pool.query(
+            'SELECT id FROM schedules WHERE id = $1 AND user_id = $2',
+            [id, req.userId]
+        )
+
+        if (check.rows.length === 0) {
+            return res.status(404).json({ message: 'Jadwal tidak ditemukan' })
+        }
+
+        await pool.query('DELETE FROM schedule_items WHERE schedule_id = $1', [id])
+
+        await pool.query('DELETE FROM schedules WHERE id = $1', [id])
+
+        res.json({ message: 'Draft jadwal berhasil dihapus' })
+
+    } catch (err) {
+        console.error(err)
+        res.status(500).json({ message: 'Server error' })
+    }
+}
+
+module.exports = { generate, saveDraft, getMySchedules,deleteDraft}

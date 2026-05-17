@@ -1,0 +1,240 @@
+/* ============================================
+   SmartKRS — Auth Pages Styles (Register & Login)
+   ============================================ */
+
+/* ----- Layout ----- */
+.auth-screen {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+/* ----- Left Panel (Decorative) ----- */
+.auth-left {
+  background: var(--text-primary);
+  color: white;
+  padding: 48px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.auth-left::after {
+  content: '';
+  position: absolute;
+  bottom: -160px;
+  right: -160px;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background: var(--accent);
+  opacity: 0.4;
+}
+
+.auth-left::before {
+  content: '';
+  position: absolute;
+  top: -100px;
+  left: -100px;
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.auth-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+  z-index: 1;
+}
+
+.auth-brand-mark {
+  width: 30px;
+  height: 30px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.auth-brand-name {
+  font-family: var(--font-display);
+  font-size: 22px;
+}
+
+.auth-quote-wrap {
+  position: relative;
+  z-index: 1;
+}
+
+.auth-quote-label {
+  font-size: 10px;
+  opacity: 0.5;
+  letter-spacing: 0.2em;
+  margin-bottom: 16px;
+}
+
+.auth-quote {
+  font-family: var(--font-display);
+  font-size: 28px;
+  line-height: 1.25;
+  margin-bottom: 18px;
+}
+
+.auth-quote em {
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.auth-quote-author {
+  font-size: 12px;
+  opacity: 0.55;
+}
+
+.auth-features {
+  position: relative;
+  z-index: 1;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  gap: 14px;
+}
+
+.auth-feat {
+  flex: 1;
+  font-size: 11px;
+  opacity: 0.7;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.auth-feat-num {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 400;
+  opacity: 1;
+}
+
+/* ----- Right Panel (Form) ----- */
+.auth-right {
+  padding: 56px 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 560px;
+  width: 100%;
+}
+
+.auth-back {
+  font-size: 12px;
+  color: var(--text-tertiary);
+  margin-bottom: 32px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  width: fit-content;
+}
+.auth-back:hover {
+  color: var(--text-primary);
+  text-decoration: none;
+}
+
+.auth-title {
+  font-family: var(--font-display);
+  font-size: 36px;
+  font-weight: 400;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+  letter-spacing: -0.015em;
+  line-height: 1.1;
+}
+
+.auth-title em {
+  font-style: italic;
+}
+
+.auth-sub {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-bottom: 32px;
+  line-height: 1.6;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+/* ----- Password Strength Meter ----- */
+.strength {
+  display: flex;
+  gap: 3px;
+  margin-top: 7px;
+}
+
+.strength-bar {
+  flex: 1;
+  height: 3px;
+  border-radius: 2px;
+  background: #E5E3DC;
+  transition: background 0.2s;
+}
+
+.strength-on { background: var(--success); }
+
+/* ----- Form Footer ----- */
+.form-footer {
+  text-align: center;
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-top: 24px;
+}
+
+.form-link {
+  color: var(--accent);
+  font-weight: 500;
+}
+
+/* ----- Alert (Error / Success) ----- */
+.alert {
+  padding: 12px 14px;
+  border-radius: var(--radius-md);
+  font-size: 13px;
+  margin-bottom: 16px;
+  display: none;
+}
+
+.alert.show { display: block; }
+
+.alert-error {
+  background: var(--danger-bg);
+  color: var(--danger-text);
+  border: 1px solid #F7C1C1;
+}
+
+.alert-success {
+  background: var(--success-bg);
+  color: var(--success);
+  border: 1px solid #B8E5D5;
+}
+
+/* ----- Disabled Button State ----- */
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

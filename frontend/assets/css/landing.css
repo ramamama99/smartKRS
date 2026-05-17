@@ -1,0 +1,250 @@
+/* ============================================
+   SmartKRS — Landing Page Styles
+   ============================================ */
+
+body {
+  background: linear-gradient(180deg, #FAF8F2 0%, #F0EDE3 100%);
+}
+
+/* ----- Navbar ----- */
+.lp-nav {
+  padding: 22px 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.lp-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.lp-logo-mark {
+  width: 28px;
+  height: 28px;
+  background: var(--accent);
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.lp-brand-name {
+  font-family: var(--font-display);
+  font-size: 22px;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+}
+
+.lp-nav-links {
+  display: flex;
+  gap: 32px;
+}
+
+.lp-nav-links a {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+.lp-nav-links a:hover {
+  color: var(--text-primary);
+  text-decoration: none;
+}
+
+.lp-nav-actions {
+  display: flex;
+  gap: 10px;
+}
+
+/* ----- Hero ----- */
+.lp-hero {
+  padding: 80px 32px 60px;
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.lp-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  padding: 5px 14px;
+  border-radius: 100px;
+  background: rgba(24, 95, 165, 0.08);
+  color: var(--accent);
+  margin-bottom: 28px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.lp-pill-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.lp-headline {
+  font-family: var(--font-display);
+  font-size: 64px;
+  font-weight: 400;
+  line-height: 1.02;
+  color: var(--text-primary);
+  margin-bottom: 22px;
+  letter-spacing: -0.025em;
+}
+
+.lp-headline em {
+  font-style: italic;
+  color: var(--accent);
+}
+
+.lp-sub {
+  font-size: 16px;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  max-width: 520px;
+  margin: 0 auto 36px;
+}
+
+.lp-cta-row {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.lp-meta {
+  font-size: 12px;
+  color: var(--text-tertiary);
+}
+
+/* ----- Preview Mockup ----- */
+.lp-preview-wrap {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.lp-preview {
+  background: white;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  padding: 20px;
+  box-shadow: 0 12px 40px -16px rgba(0, 0, 0, 0.1);
+}
+
+.lp-preview-bar {
+  display: flex;
+  gap: 5px;
+  margin-bottom: 16px;
+}
+
+.lp-preview-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #E5E3DC;
+}
+
+/* Mini Grid */
+.mini-grid {
+  display: grid;
+  grid-template-columns: 60px repeat(4, 1fr);
+  gap: 5px;
+}
+
+.mini-h {
+  font-size: 11px;
+  color: var(--text-tertiary);
+  padding: 6px;
+  text-align: center;
+  font-weight: 500;
+}
+
+.mini-t {
+  font-size: 11px;
+  color: var(--text-tertiary);
+  padding: 6px;
+}
+
+.mini-e {
+  background: var(--bg-surface);
+  border-radius: 5px;
+  min-height: 30px;
+}
+
+.mini-c {
+  border-radius: 5px;
+  padding: 6px 8px;
+  font-size: 11px;
+  font-weight: 500;
+  min-height: 30px;
+  display: flex;
+  align-items: center;
+}
+
+.c-blue { background: var(--c-blue-bg); color: var(--c-blue-text); }
+.c-green { background: var(--c-green-bg); color: var(--c-green-text); }
+.c-purple { background: var(--c-purple-bg); color: var(--c-purple-text); }
+.c-amber { background: var(--c-amber-bg); color: var(--c-amber-text); }
+.c-coral { background: var(--c-coral-bg); color: var(--c-coral-text); }
+
+/* ----- Features ----- */
+.lp-features {
+  padding: 80px 32px;
+  max-width: 1080px;
+  margin: 40px auto 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.lp-feat {
+  padding: 28px;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+}
+
+.lp-feat-icon {
+  width: 40px;
+  height: 40px;
+  background: var(--accent-bg);
+  color: var(--accent);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  margin-bottom: 16px;
+}
+
+.lp-feat-title {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+}
+
+.lp-feat-desc {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.55;
+}
+
+/* ----- Footer ----- */
+.lp-footer {
+  padding: 40px 32px;
+  text-align: center;
+  font-size: 12px;
+  color: var(--text-tertiary);
+  border-top: 1px solid var(--border);
+  margin-top: 40px;
+}

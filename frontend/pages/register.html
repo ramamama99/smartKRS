@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Daftar — SmartKRS</title>
+  <link rel="stylesheet" href="../assets/css/global.css" />
+  <link rel="stylesheet" href="../assets/css/auth.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css" />
+</head>
+<body>
+
+  <div class="auth-screen">
+
+    <!-- LEFT PANEL -->
+    <div class="auth-left">
+      <div class="auth-brand">
+        <div class="auth-brand-mark">S</div>
+        <div class="auth-brand-name">SmartKRS</div>
+      </div>
+
+      <div class="auth-quote-wrap">
+        <div class="auth-quote-label">KENAPA SMARTKRS</div>
+        <p class="auth-quote">
+          Gak ada lagi <em>tracing Excel</em> sambil ngitung bentrok. Pilih hari, klik generate, selesai.
+        </p>
+        <div class="auth-quote-author">— Built for Telkom IF '24</div>
+      </div>
+
+      <div class="auth-features">
+        <div class="auth-feat">
+          <div class="auth-feat-num">5</div>
+          Variasi jadwal otomatis
+        </div>
+        <div class="auth-feat">
+          <div class="auth-feat-num">0</div>
+          Konflik waktu
+        </div>
+        <div class="auth-feat">
+          <div class="auth-feat-num">10s</div>
+          Generate time
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT PANEL (FORM) -->
+    <div class="auth-right">
+      <a href="../index.html" class="auth-back">
+        <i class="ti ti-arrow-left"></i> Kembali
+      </a>
+
+      <h1 class="auth-title">Daftar <em>akun baru</em></h1>
+      <p class="auth-sub">Gratis selamanya. Isi data di bawah ini untuk mulai.</p>
+
+      <!-- Alert untuk error/success -->
+      <div id="alert" class="alert"></div>
+
+      <form class="auth-form" id="register-form">
+        <div class="form-row">
+          <div class="field">
+            <label for="nim">NIM</label>
+            <input class="input" type="text" id="nim" name="nim" placeholder="1101230xxx" required />
+          </div>
+          <div class="field">
+            <label for="name">Nama lengkap</label>
+            <input class="input" type="text" id="name" name="name" placeholder="Satria" required />
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="email">Email kampus</label>
+          <input class="input" type="email" id="email" name="email" placeholder="kamu@student.telkomuniversity.ac.id" required />
+          <div class="hint" id="email-hint"></div>
+        </div>
+
+        <div class="field">
+          <label for="password">Password</label>
+          <input class="input" type="password" id="password" name="password" placeholder="Min. 6 karakter" required minlength="6" />
+          <div class="strength" id="strength-meter">
+            <div class="strength-bar"></div>
+            <div class="strength-bar"></div>
+            <div class="strength-bar"></div>
+            <div class="strength-bar"></div>
+          </div>
+          <div class="hint" id="strength-hint">Min. 6 karakter</div>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block" id="submit-btn" style="margin-top: 8px;">
+          <span id="submit-text">Daftar sekarang</span>
+          <i class="ti ti-arrow-right"></i>
+        </button>
+      </form>
+
+      <div class="form-footer">
+        Sudah punya akun? <a href="login.html" class="form-link">Masuk di sini</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Scripts -->
+  <script src="../assets/js/api.js"></script>
+  <script src="../assets/js/register.js"></script>
+
+</body>
+</html>

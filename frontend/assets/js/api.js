@@ -81,4 +81,28 @@ const api = {
   getToken,
   removeToken,
   isLoggedIn: () => !!getToken(),
+  
+  // Preferences
+  getPreferences: () => apiRequest('/preferences'),
+  updatePreferences: (data) => apiRequest('/preferences', {
+    method: 'PUT',
+    body: JSON.stringify(data),
+  }),
+
+  // Courses
+  getCourses: () => apiRequest('/courses'),
+
+  // Schedules
+  generateSchedule: (data) => apiRequest('/schedules/generate', {
+    method: 'POST',
+    body: JSON.stringify(data),
+  }),
+  saveSchedule: (data) => apiRequest('/schedules/save', {
+    method: 'POST',
+    body: JSON.stringify(data),
+  }),
+  getMySchedules: () => apiRequest('/schedules/my'),
+  deleteSchedule: (id) => apiRequest(`/schedules/${id}`, {
+    method: 'DELETE',
+  }),
 };

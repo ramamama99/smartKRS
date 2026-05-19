@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Setup Preferensi — SmartKRS</title>
+  <link rel="stylesheet" href="../assets/css/global.css" />
+  <link rel="stylesheet" href="../assets/css/onboarding.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css" />
+</head>
+<body>
+
+  <div class="ob-screen">
+
+    <!-- Stepper -->
+    <div class="ob-stepper">
+      <div class="step-num" id="step-1-num">1</div>
+      <div class="step-line" id="step-line-1"></div>
+      <div class="step-num step-todo" id="step-2-num">2</div>
+      <div class="step-line" id="step-line-2"></div>
+      <div class="step-num step-todo" id="step-3-num">3</div>
+    </div>
+
+    <!-- Step 1: Hari Kuliah -->
+    <div class="ob-card" id="step-1">
+      <div class="ob-label">LANGKAH 1 DARI 3</div>
+      <h2 class="ob-title">Mau kuliah <em>hari apa</em> aja?</h2>
+      <p class="ob-sub">Pilih hari yang oke buat kamu. Bisa diubah lagi nanti di halaman preferensi.</p>
+
+      <div class="ob-days" id="day-picker">
+        <div class="day-pill selected" data-day="Senin">Senin</div>
+        <div class="day-pill selected" data-day="Selasa">Selasa</div>
+        <div class="day-pill selected" data-day="Rabu">Rabu</div>
+        <div class="day-pill selected" data-day="Kamis">Kamis</div>
+        <div class="day-pill" data-day="Jumat">Jumat</div>
+        <div class="day-pill" data-day="Sabtu">Sabtu</div>
+      </div>
+
+      <div class="hint hint-error" id="day-error" style="display:none;">
+        Pilih minimal 1 hari
+      </div>
+
+      <div class="ob-actions">
+        <button class="btn btn-ghost" onclick="skipOnboarding()">Lewati</button>
+        <button class="btn btn-primary" onclick="goToStep(2)">
+          Lanjut <i class="ti ti-arrow-right"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Step 2: Jam Paling Sore -->
+    <div class="ob-card" id="step-2" style="display:none;">
+      <div class="ob-label">LANGKAH 2 DARI 3</div>
+      <h2 class="ob-title">Paling sore mau <em>pulang</em> jam berapa?</h2>
+      <p class="ob-sub">Kelas terakhir kamu maksimal selesai jam berapa?</p>
+
+      <div class="time-display">
+        <div>
+          <div class="time-label-small">PALING SORE</div>
+          <div class="time-value" id="time-display-val">18:00</div>
+        </div>
+      </div>
+
+      <div class="slider-wrap">
+        <div class="slider-labels">
+          <span>13:00</span>
+          <span>21:30</span>
+        </div>
+        <input
+          type="range"
+          id="time-slider"
+          min="0"
+          max="17"
+          value="10"
+          class="range-slider"
+        />
+      </div>
+
+      <div class="tip-box">
+        <i class="ti ti-bulb tip-icon"></i>
+        <div class="tip-text">Kelas di Telkom biasanya selesai jam 18:30 atau 21:30. Pilih sesuai gaya hidup kamu.</div>
+      </div>
+
+      <div class="ob-actions">
+        <button class="btn btn-ghost" onclick="goToStep(1)">
+          <i class="ti ti-arrow-left"></i> Kembali
+        </button>
+        <button class="btn btn-primary" onclick="goToStep(3)">
+          Lanjut <i class="ti ti-arrow-right"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Step 3: Toleransi Jeda -->
+    <div class="ob-card" id="step-3" style="display:none;">
+      <div class="ob-label">LANGKAH 3 DARI 3 — TERAKHIR!</div>
+      <h2 class="ob-title">Toleransi <em>jeda</em> antar kelas?</h2>
+      <p class="ob-sub">Berapa lama maksimal kamu mau nunggu antar kelas di hari yang sama?</p>
+
+      <div class="gap-grid" id="gap-picker">
+        <div class="gap-card" data-gap="30">
+          <div class="gap-num">0 Jam</div>
+          <div class="gap-desc">Langsung tanpa jeda</div>
+        </div>
+        <div class="gap-card" data-gap="60">
+          <div class="gap-num">1 jam</div>
+          <div class="gap-desc">Cukup buat makan siang ringan</div>
+        </div>
+        <div class="gap-card selected" data-gap="120">
+          <div class="gap-num">2 jam</div>
+          <div class="gap-desc">Santai, bisa istirahat dulu</div>
+        </div>
+        <div class="gap-card" data-gap="240">
+          <div class="gap-num">4 jam</div>
+          <div class="gap-desc">Bisa pulang, ngerjain tugas dulu</div>
+        </div>
+      </div>
+
+      <div class="ob-actions">
+        <button class="btn btn-ghost" onclick="goToStep(2)">
+          <i class="ti ti-arrow-left"></i> Kembali
+        </button>
+        <button class="btn btn-primary" id="finish-btn" onclick="finishOnboarding()">
+          <span id="finish-text">Selesai</span>
+          <i class="ti ti-check"></i>
+        </button>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="../assets/js/api.js"></script>
+  <script src="../assets/js/onboarding.js"></script>
+
+</body>
+</html>

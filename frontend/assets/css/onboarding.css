@@ -1,0 +1,277 @@
+.ob-screen {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 20px;
+  background: var(--bg-surface);
+}
+
+/* ----- Stepper ----- */
+.ob-stepper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  max-width: 380px;
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.step-num {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--text-primary);
+  color: white;
+  font-size: 13px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.3s;
+  font-family: var(--font-body);
+}
+
+.step-num.step-todo {
+  background: #E5E3DC;
+  color: var(--text-tertiary);
+}
+
+.step-num.step-done {
+  background: var(--success);
+  color: white;
+}
+
+.step-line {
+  flex: 1;
+  height: 2px;
+  background: #E5E3DC;
+  border-radius: 2px;
+  transition: background 0.3s;
+}
+
+.step-line.done {
+  background: var(--success);
+}
+
+/* ----- Card ----- */
+.ob-card {
+  background: white;
+  border-radius: var(--radius-xl);
+  padding: 44px 48px;
+  max-width: 540px;
+  width: 100%;
+  border: 1px solid var(--border);
+  box-shadow: 0 8px 32px -8px rgba(0, 0, 0, 0.08);
+}
+
+.ob-label {
+  font-size: 10px;
+  color: var(--accent);
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  margin-bottom: 14px;
+}
+
+.ob-title {
+  font-family: var(--font-display);
+  font-size: 36px;
+  font-weight: 400;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+  letter-spacing: -0.015em;
+  line-height: 1.15;
+}
+
+.ob-title em {
+  font-style: italic;
+  color: var(--accent);
+}
+
+.ob-sub {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  margin-bottom: 32px;
+}
+
+/* ----- Day Picker ----- */
+.ob-days {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.day-pill {
+  padding: 16px 8px;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-md);
+  text-align: center;
+  font-size: 13px;
+  color: var(--text-primary);
+  cursor: pointer;
+  background: white;
+  transition: all 0.15s;
+  user-select: none;
+}
+
+.day-pill:hover {
+  border-color: var(--accent);
+}
+
+.day-pill.selected {
+  background: var(--accent-bg);
+  border-color: var(--accent);
+  color: var(--accent-text);
+  font-weight: 500;
+}
+
+/* ----- Time Slider ----- */
+.time-display {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 28px;
+  background: var(--bg-surface);
+  border-radius: var(--radius-lg);
+  margin-bottom: 24px;
+}
+
+.time-label-small {
+  font-size: 11px;
+  color: var(--text-secondary);
+  letter-spacing: 0.1em;
+  margin-bottom: 6px;
+  text-align: center;
+}
+
+.time-value {
+  font-family: var(--font-display);
+  font-size: 56px;
+  font-weight: 400;
+  color: var(--accent);
+  letter-spacing: -0.02em;
+  line-height: 1;
+  text-align: center;
+}
+
+.slider-wrap {
+  padding: 0 8px;
+  margin-bottom: 28px;
+}
+
+.slider-labels {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  font-size: 12px;
+  color: var(--text-tertiary);
+}
+
+.range-slider {
+  width: 100%;
+  height: 5px;
+  -webkit-appearance: none;
+  appearance: none;
+  background: #E5E3DC;
+  border-radius: 3px;
+  outline: none;
+  cursor: pointer;
+}
+
+.range-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 22px;
+  height: 22px;
+  background: white;
+  border: 2.5px solid var(--accent);
+  border-radius: 50%;
+  cursor: grab;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+}
+
+.range-slider::-webkit-slider-runnable-track {
+  background: linear-gradient(to right, var(--accent) 0%, var(--accent) var(--slider-pct, 59%), #E5E3DC var(--slider-pct, 59%));
+  border-radius: 3px;
+  height: 5px;
+}
+
+/* ----- Tip Box ----- */
+.tip-box {
+  display: flex;
+  gap: 12px;
+  padding: 14px 16px;
+  background: var(--accent-bg);
+  border-radius: var(--radius-md);
+  margin-bottom: 32px;
+}
+
+.tip-icon {
+  color: var(--accent);
+  font-size: 18px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.tip-text {
+  font-size: 12px;
+  color: var(--accent-text);
+  line-height: 1.55;
+}
+
+/* ----- Gap Cards ----- */
+.gap-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.gap-card {
+  padding: 20px;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  background: white;
+  transition: all 0.15s;
+  user-select: none;
+}
+
+.gap-card:hover {
+  border-color: var(--accent);
+}
+
+.gap-card.selected {
+  background: var(--accent-bg);
+  border-color: var(--accent);
+}
+
+.gap-num {
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 400;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+  letter-spacing: -0.01em;
+}
+
+.gap-card.selected .gap-num {
+  color: var(--accent-text);
+}
+
+.gap-desc {
+  font-size: 12px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+/* ----- Actions ----- */
+.ob-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
